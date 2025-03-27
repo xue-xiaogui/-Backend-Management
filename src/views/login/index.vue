@@ -47,7 +47,7 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
 import { useRouter } from 'vue-router'
-import { type FormInstance } from 'element-plus'
+import { ElNotification, type FormInstance } from 'element-plus'
 import { setToken, getToken } from '@/utils/token'
 
 // import { useUserStore } from '@/stores/modules/user'
@@ -100,14 +100,14 @@ const handleLogin = async () => {
           } else {
             ElNotification({
               title: '登陆失败',
-              message: req.data.msg || '登陆失败请重新登录！',
+              message: '登陆失败请重新登录！',
               type: 'error',
             })
           }
         } catch (error) {
           ElNotification({
             title: 'Error',
-            message: error.data.msg || '账号或密码错误，请重新输入！',
+            message: '账号或密码错误，请重新输入！',
             type: 'error',
           })
         }
@@ -129,33 +129,33 @@ const handleLogin = async () => {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/styles/variables.scss';
-
 .login-container {
-  @include flex-center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  background: $gradient-bg;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 .login-card {
   width: 420px;
   padding: 40px;
-  background: $white;
-  border-radius: $border-radius-lg;
-  box-shadow: $box-shadow;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow:  0 2px 12px 0 rgba(0, 0, 0, 0.1);
   
   .header {
     text-align: center;
     margin-bottom: 36px;
     
     .title {
-      color: $primary-color;
+      color: #409eff;
       font-size: 24px;
       margin-bottom: 8px;
     }
     
     .subtitle {
-      color: $text-secondary;
+      color: #909399;
       font-size: 14px;
     }
   }

@@ -106,6 +106,7 @@ import {
   Histogram,
   TrendCharts
 } from '@element-plus/icons-vue'
+import { ElMessageBox, ElNotification } from 'element-plus';
 
 const state = reactive({
   name: '',

@@ -7,7 +7,6 @@ import { isArray } from '@/utils/validate'
 import state from '@/config';
 
 const messageName = state.messageName
-
 const statusName = state.statusName
 const successCode = state.successCode
 const debounce = state.debounce
@@ -18,6 +17,7 @@ import type {
   AxiosError,
 } from 'axios';
 import { getToken } from '@/utils/token'
+import { ElNotification } from 'element-plus';
 
 
 // 定义业务错误结构
@@ -232,3 +232,7 @@ function generateRequestKey(config: AxiosRequestConfig): string {
 }
 
 export default instance
+function tryRefreshToken(config: any) {
+  throw new Error('Function not implemented.');
+}
+

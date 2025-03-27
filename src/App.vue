@@ -2,7 +2,6 @@
 import { RouterView } from 'vue-router'
 import tokenTableName from '@/config'
 console.log(tokenTableName)
-// import { getToken, removeToken, setToken } from '@/utils/token'
 </script>
 
 <template>
